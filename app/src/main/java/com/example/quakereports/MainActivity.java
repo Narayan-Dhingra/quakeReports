@@ -1,13 +1,19 @@
 package com.example.quakereports;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
+import com.example.quakereports.Modal.EarthQuake;
+import com.example.quakereports.adapter.EarthQuakeAdapter;
 import com.example.quakereports.databinding.ActivityMainBinding;
+import com.example.quakereports.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,22 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
         init();
 
+        Log.d("narayan", "onCreate: " + Utils.extractEarthquakes());
+
     }
 
     private void init() {
 
-        ArrayList<String> earthQuakes = new ArrayList<String>();
-        earthQuakes.add("San Francisco");
-        earthQuakes.add("London");
-        earthQuakes.add("Tokyo");
-        earthQuakes.add("Mexico City");
-        earthQuakes.add("Moscow");
-        earthQuakes.add("Rio de Janeiro");
-        earthQuakes.add("Paris");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, earthQuakes);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        binding.listView.setAdapter(adapter);
+        binding.recyclerView.setAdapter(new EarthQuakeAdapter(Utils.extractEarthquakes(), this));
 
     }
 

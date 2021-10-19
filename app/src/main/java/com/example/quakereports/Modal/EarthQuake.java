@@ -7,11 +7,13 @@ public class EarthQuake {
     private String cityName;
     private long time;
     private double magnitude;
+    private String url;
 
-    public EarthQuake(String cityName, long time, double magnitude) {
+    public EarthQuake(String cityName, long time, double magnitude, String url) {
         this.cityName = cityName;
         this.time = time;
         this.magnitude = magnitude;
+        this.url = url;
     }
 
     public String getCityName() {
@@ -36,6 +38,14 @@ public class EarthQuake {
 
     public void setMagnitude(double magnitude) {
         this.magnitude = magnitude;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @NonNull

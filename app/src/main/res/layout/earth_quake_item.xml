@@ -3,45 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:paddingTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:id="@+id/constraintLayout">
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/magnitude_drawable"
         tools:text="8.4" />
 
     <TextView
-        android:id="@+id/cityName"
-        android:layout_width="136dp"
+        android:id="@+id/location_offset"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toEndOf="@+id/magnitude"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="California" />
+        tools:text="122 km NW California" />
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="136dp"
+        android:id="@+id/primary_Location"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/location_offset"
+        app:layout_constraintTop_toBottomOf="@+id/location_offset"
+        tools:text="Sydney" />
+
+    <TextView
+        android:id="@+id/dateOfQuake"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cityName"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="22 feb, 2020" />
 
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/dateOfQuake"
+        app:layout_constraintTop_toBottomOf="@+id/dateOfQuake"
+        tools:text="04:56 AM" />
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/purple_200"
         android:layout_marginTop="4dp"
+        android:background="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityName" />
+        app:layout_constraintTop_toBottomOf="@+id/primary_Location" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

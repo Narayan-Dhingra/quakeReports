@@ -76,12 +76,12 @@ public class EarthQuakeAdapter extends RecyclerView.Adapter<EarthQuakeAdapter.My
 
         magnitudeCircle.setColor(magnitudeColor);
 
-        holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openWebPage(list.getUrl());
-            }
-        });
+//        holder.layout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openWebPage(list.getUrl());
+//            }
+//        });
 
 
 

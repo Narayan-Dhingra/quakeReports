@@ -2,10 +2,14 @@ package com.example.quakereports;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.quakereports.Modal.EarthQuake;
 import com.example.quakereports.adapter.EarthQuakeAdapter;
@@ -38,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         binding.recyclerView.setAdapter(new EarthQuakeAdapter(Utils.extractEarthquakes(), this));
+
+
 
     }
 

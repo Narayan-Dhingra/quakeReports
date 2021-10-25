@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     public static final String LOG_TAG = MainActivity.class.getName();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
